@@ -322,3 +322,102 @@ body {
   font-size: 0.85rem;
   color: var(--muted);
 }
+
+
+/* Variables para modo CLARO */
+.light-mode {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --card: #f1f5f9;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #3b82f6;
+  --secondary: #e2e8f0;
+  --pendiente: #d97706;
+  --leyendo: #0ea5e9;
+  --terminado: #16a34a;
+}
+
+/* Posición fija del toggle */
+.theme-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.theme-label {
+  cursor: pointer;
+  user-select: none;
+}
+
+.theme-switch {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background: #334155;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#theme-switch:checked + .slider {
+  background: var(--primary);
+}
+
+#theme-switch:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* Aplicar tema a toda la página */
+body.light-mode {
+  background: radial-gradient(circle at top, var(--bg) 0%, #e2e8f0 70%);
+  color: var(--text);
+}
+
+/* Ajustar elementos clave (¡IMPORTANTE: usa !important para sobrescribir!) */
+body.light-mode .app-header,
+body.light-mode .panel,
+body.light-mode .card {
+  background: var(--panel) !important;
+  border-color: #cbd5e1 !important;
+  color: var(--text) !important;
+}
+
+body.light-mode .input,
+body.light-mode .select,
+body.light-mode .textarea {
+  background: #f8fafc !important;
+  border-color: #94a3b8 !important;
+  color: var(--text) !important;
+}
+
+body.light-mode .counter {
+  background: var(--secondary) !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.light-mode .footer {
+  border-color: #cbd5e1 !important;
+  color: var(--muted) !important;
+}

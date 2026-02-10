@@ -478,6 +478,23 @@ function init() {
   render();
 }
 
+
+/*  Toggle de tema  */
+const themeSwitch = document.getElementById('theme-switch');
+const themeLabel = document.querySelector('.theme-label');
+const body = document.body;
+
+if (themeSwitch) {
+  themeSwitch.addEventListener('change', function() {
+    if (this.checked) {
+      body.classList.add('light-mode');
+      themeLabel.textContent = '☀️ Modo claro';
+    } else {
+      body.classList.remove('light-mode');
+      themeLabel.textContent = '🌙 Modo oscuro';
+    }
+  });
+}
 // Arrancar
 init();
 
