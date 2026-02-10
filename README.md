@@ -87,3 +87,8 @@ Enlaces Importantes
 | Código Fuente | Ver en StackBlitz |
 
 
+Equipo:
+
+JESUS ORLANDO DELGADO AZAR
+JUAN ARATH LOPEZ ALVIDREZ
+HECTOR ANTONIO TERRAZAS GUEVARA
